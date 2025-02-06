@@ -24,7 +24,7 @@ setup_db: build
 
 .PHONY: sink
 sink:
-	substreams-sink-sql run $(DSN) $(MANIFEST) $(START):$(STOP) --undo-buffer-size $(UNDO_BUFFER_SIZE) --on-module-hash-mistmatch=warn --batch-block-flush-interval 5000 --batch-row-flush-interval 0
+	substreams-sink-sql run $(DSN) $(MANIFEST) $(START):$(STOP) --undo-buffer-size $(UNDO_BUFFER_SIZE) --on-module-hash-mistmatch=warn --batch-block-flush-interval=5000 --batch-row-flush-interval=2147483648
 
 .PHONY: protogen
 protogen:
